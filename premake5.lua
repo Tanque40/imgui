@@ -2,10 +2,9 @@ project "IMGUI"
 kind "StaticLib"
 language 'C++'
 cppdialect 'C++latest'
-architecture 'universal'
 
-targetdir("bin/" .. OutputDir .. "/%{prj.name}")
-objdir("bin-int/" .. OutputDir .. "/%{prj.name}")
+targetdir("bin/" .. outputdir .. "/%{prj.name}")
+objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
 files {
     "imconfig.h",
@@ -27,6 +26,12 @@ includedirs {
     "./",
     "../GLFW/include"
 }
+
+filter "system:macosx"
+architecture "ARM64"
+
+filter "system:windows"
+architecture "x86_64"
 
 filter "configurations:Debug"
 runtime "Debug"
