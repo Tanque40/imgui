@@ -34,9 +34,9 @@ project "IMGUI"
 	architecture "x64"
 
 	filter "configurations:Debug"
-	runtime "Debug"
-	symbols "on"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
-	runtime "Release"
-	optimize "on"
+		runtime "Release"
+		optimize "on"
