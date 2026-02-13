@@ -1,7 +1,6 @@
 project "IMGUI"
 	kind "StaticLib"
 	language 'C++'
-	cppdialect 'C++latest'
 
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -31,6 +30,7 @@ project "IMGUI"
 	architecture "ARM64"
 
 	filter "system:windows"
+    staticruntime "on"
 	architecture "x64"
 
 	filter "configurations:Debug"
