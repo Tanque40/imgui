@@ -18,6 +18,7 @@ project "IMGUI"
 		"imgui_tables.cpp",
 		"backends/imgui_impl_opengl3.cpp",
 		"backends/imgui_impl_glfw.cpp",
+		"backends/imgui_impl_opengl3_loader.h",
 		"imgui_demo.cpp"
 	}
 
@@ -27,11 +28,12 @@ project "IMGUI"
 	}
 
 	filter "system:macosx"
-	architecture "ARM64"
+		staticruntime "on"
+		architecture "ARM64"
 
 	filter "system:windows"
-    staticruntime "on"
-	architecture "x64"
+		staticruntime "on"
+		architecture "x64"
 
 	filter "configurations:Debug"
 		runtime "Debug"
